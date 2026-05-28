@@ -8,6 +8,10 @@ use crate::reduce_lift::poly_eval::EvalPolyLocallyRing;
 use crate::reduce_lift::poly_factor_gcd::IntegerPolyGCDRing;
 use crate::ring::*;
 
+#[cfg(feature = "mpir")]
+pub type BigIntRingEl = crate::rings::mpir::MPZEl;
+#[cfg(not(feature = "mpir"))]
+pub type BigIntRingEl = crate::rings::rust_bigint::RustBigint;
 /// Type alias for the current default used big integer ring implementation.
 ///
 /// The type this points to may change when features or other compilation parameters
