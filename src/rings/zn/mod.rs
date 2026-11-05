@@ -14,6 +14,10 @@ use crate::rings::finite::FiniteRingStore;
 /// for moduli `n` of size slightly smaller than 64 bits.
 pub mod zn_64;
 
+/// This module contains [`zn_128::Zn`], an implementation of `Z/nZ` for odd moduli
+/// `n < 2^128` using Montgomery multiplication on two 64-bit limbs.
+pub mod zn_128;
+
 /// This module contains [`zn_big::Zn`], a general-purpose implementation of
 /// Barett reduction. It is relatively slow when instantiated with small fixed-size
 /// integer type.
